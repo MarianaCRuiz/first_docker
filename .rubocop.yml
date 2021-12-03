@@ -3,7 +3,7 @@ require:
 
 AllCops:
   NewCops: enable
-  TargetRubyVersion: 3.0
+  TargetRubyVersion: 3.0.3
   Exclude:
    - 'bin/**/*'
    - 'config/**/*'
@@ -21,3 +21,6 @@ Metrics/BlockLength:
 
 Style/Documentation:
   Enabled: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: 'compact'

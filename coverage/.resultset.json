@@ -1,6 +1,19 @@
 {
   "RSpec": {
     "coverage": {
+      "/opt/app/app/models/book.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/opt/app/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/opt/app/app/controllers/pages_controller.rb": {
         "lines": [
           1,
@@ -12,6 +25,15 @@
       "/opt/app/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/opt/app/app/controllers/books_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -42,17 +64,8 @@
         ],
         "branches": {
         }
-      },
-      "/opt/app/app/models/application_record.rb": {
-        "lines": [
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1638472908
+    "timestamp": 1638499764
   }
 }
