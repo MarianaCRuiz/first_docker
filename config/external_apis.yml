@@ -1,0 +1,6 @@
+production:
+  purchase_api: 'http://localhost:4000'
+development:
+  purchase_api: 'http://localhost:4000'
+test:
+  purchase_api: 'http://localhost:4000'

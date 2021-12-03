@@ -1,5 +1,6 @@
 class PurchasesController < ApplicationController
   def index
-    @purchase = Purchase.new
+    byebug
+    @purchase = Purchase.generate(params)
   end
 end

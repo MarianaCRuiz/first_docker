@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'pages#index'
+  devise_for :clients
+  root 'home#index'
   resources :books, only: %i[index show]
   resources :purchases, only: %i[index]
 end
