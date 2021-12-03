@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   root 'pages#index'
-  resources :books, only: %i[index]
+  resources :books, only: %i[index show]
+  resources :purchases, only: %i[index]
 end

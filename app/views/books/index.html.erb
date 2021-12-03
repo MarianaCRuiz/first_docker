@@ -3,7 +3,7 @@
   <% @books.each do |book| %>
   <div>
     <ul>
-      <li><%= book.name %>, <%= book.author %></li>
+      <li><%= link_to book.name, book_path(book) %>, <%= book.author %></li>
       <li><%= number_to_currency(book.price) %>, Desconto: <%= number_to_percentage(book.discount, precision: 2) %></li>
     </ul>
   </div>
