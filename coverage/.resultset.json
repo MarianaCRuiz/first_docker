@@ -1,34 +1,16 @@
 {
   "RSpec": {
     "coverage": {
-      "/opt/app/app/models/client.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/opt/app/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
       "/opt/app/app/models/book.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/opt/app/app/controllers/books_controller.rb": {
+      "/opt/app/app/controllers/home_controller.rb": {
         "lines": [
           1,
           1,
-          1,
-          null,
-          1,
-          1,
-          null,
           null,
           null
         ]
@@ -39,11 +21,46 @@
           null
         ]
       },
+      "/opt/app/app/controllers/books_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
       "/opt/app/app/controllers/purchases_controller.rb": {
         "lines": [
           1,
           1,
           1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/opt/app/app/models/purchase.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
           null,
           null
         ]
@@ -68,16 +85,6 @@
         "branches": {
         }
       },
-      "/opt/app/app/controllers/pages_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/opt/app/app/helpers/application_helper.rb": {
         "lines": [
           0,
@@ -85,8 +92,29 @@
         ],
         "branches": {
         }
+      },
+      "/opt/app/app/models/application_record.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/opt/app/app/models/client.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1638501672
+    "timestamp": 1638507808
   }
 }
