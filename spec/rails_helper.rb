@@ -49,7 +49,6 @@ RSpec.configure do |config|
   config.before(type: :system) do
     driven_by :rack_test
   end
-  config.include FactoryBot::Syntax::Methods
   config.include Warden::Test::Helpers
 
   # You can uncomment this line to turn off ActiveRecord support entirely.

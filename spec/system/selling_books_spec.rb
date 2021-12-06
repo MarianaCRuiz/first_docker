@@ -9,7 +9,7 @@ describe 'client buying book' do
 
     allow(Faraday).to receive(:post)
       .with("#{Rails.configuration.external_apis[:purchase_api]}/api/v1/purchase",
-            params: { purchase_order: { **purchase_data }})
+            params: { purchase_order: purchase_data })
       .and_return(instance_double(Faraday::Response, status: 200, body: purchase_accepted))
 
     login_as client, scope: :client
