@@ -6,5 +6,4 @@ class BooksController < ApplicationController
     @client = current_client
     @book = Book.find(params[:id])
   end
-
 end

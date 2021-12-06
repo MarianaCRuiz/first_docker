@@ -18,5 +18,6 @@ describe 'client buying book' do
     click_on 'Comprar'
 
     expect(page).to have_content('Compra efetuada com sucesso')
+    expect(page).to have_content(90)
   end
 end
