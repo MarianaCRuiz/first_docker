@@ -1,0 +1,11 @@
+<h1>Meus Livros</h1>
+<div>
+  <% @books.each do |book| %>
+  <div>
+    <ul>
+      <li><%= book.name %>, <%= book.author %></li>
+      <li><%= number_to_currency(@books_client.find_by(book: book).final_price) %></li>
+    </ul>
+  </div>
+  <% end %>
+</div>

@@ -11,8 +11,36 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div>
+      <% if notice %>
+        <p><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p><%= alert %></p>
+      <% end %>
+      <ul id="loginbar">
+        <li>
+          <%= link_to 'Página Inicial', books_path %>
+        </li>
+        <% if client_signed_in? %>
+          <li><%= current_client.email %></li>
+            <%# link_to 'Meus Livros', client_books_path %>
+          <li>
+            <%= link_to 'Sair', destroy_client_session_path, method: :delete %>
+          </li>
+          <li>
+            <%= link_to 'Editar Conta', client_registration_path, method: :put %>
+          </li>
+        <% elsif !client_signed_in? %>
+          <li>
+            <%= link_to 'Entrar', new_client_session_path %>
+          </li>
+          <li>
+            <%= link_to 'Registrar-se', new_client_registration_path %>
+          </li>
+        <% end %>
+      </ul>
+      <%= yield %>
+    </div>
   </body>
 </html>

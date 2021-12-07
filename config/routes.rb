@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :books, only: %i[index show]
   resources :purchases, only: %i[create]
-  namespace :client do
-    resources :books, only: %i[show]
+  namespace :clients do
+    resources :books, only: %i[index]
   end
 end

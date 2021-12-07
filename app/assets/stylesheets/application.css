@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
- ul {
-   list-style: none;
- }
+ul {
+   list-style-type: none;
+}
+ul#loginbar li {
+  display:inline;
+  padding: 5px;
+}
