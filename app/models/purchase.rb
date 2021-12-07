@@ -1,5 +1,4 @@
 class Purchase
-
   def self.generate(params)
     @book = Book.find(params[:book_id])
     @client = Client.find(params[:client_id])

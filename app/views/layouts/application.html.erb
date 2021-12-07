@@ -24,7 +24,7 @@
         </li>
         <% if client_signed_in? %>
           <li><%= current_client.email %></li>
-            <%# link_to 'Meus Livros', client_books_path %>
+            <%= link_to 'Meus Livros', clients_books_path %>
           <li>
             <%= link_to 'Sair', destroy_client_session_path, method: :delete %>
           </li>

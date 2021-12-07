@@ -6,5 +6,4 @@ describe 'visitor access' do
 
     expect(page).to have_content('Hello')
   end
-  
 end

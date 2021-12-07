@@ -4,6 +4,6 @@ class Client < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :book_clients
+  has_many :book_clients, dependent: false
   has_many :books, through: :book_clients
 end

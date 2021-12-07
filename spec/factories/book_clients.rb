@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :book_client do
-    client { nil }
-    book { nil }
-    final_price { "9.99" }
+    client
+    book
+    final_price { 12.3 }
   end
 end
