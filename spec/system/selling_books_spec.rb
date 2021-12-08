@@ -13,6 +13,25 @@ describe 'client buying book' do
 
     login_as client, scope: :client
     visit books_path
+    within 'ul#eachbook:nth-child(1)' do
+      click_on 'Comprar'
+    end
+
+    expect(page).to have_content('Compra efetuada com sucesso')
+    expect(page).to have_content(90)
+  end
+  it 'buying a book' do
+    client = create(:client)
+    book = create(:book, price: 100, discount: 10)
+    purchase_data = { book_id: book.id, price: book.price, discount: book.discount, client_id: client.id }
+    purchase_success = File.read(Rails.root.join('spec/fixtures/purchase.json'))
+
+    allow(Faraday).to receive(:post)
+      .with("#{Rails.configuration.external_apis[:purchase_api]}/api/v1/charge", charge_order: purchase_data)
+      .and_return(instance_double(Faraday::Response, status: 201, body: purchase_success))
+
+    login_as client, scope: :client
+    visit books_path
     click_on book.name
     click_on 'Comprar'
 

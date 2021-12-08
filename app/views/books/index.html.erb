@@ -2,10 +2,16 @@
 <div id="allbooks">
   <% @books.each do |book| %>
   <div>
-    <ul>
+    <ul id="eachbook">
       <li><%= link_to book.name, book_path(book) %>, <%= book.author %></li>
       <li><%= number_to_currency(book.price) %>, Desconto: <%= number_to_percentage(book.discount, precision: 2) %></li>
-      <li><%= link_to 'Comprar', purchases_path({book_id: book, client_id: @client}), method: :post %></li>
+      <li>
+        <% if @client %>
+          <%= link_to 'Comprar', purchases_path({book_id: book, client_id: @client}), method: :post %>
+        <% else %>
+          <%= link_to 'Comprar', new_client_session_path %>
+        <% end %>
+        </li>
     </ul>
   </div>
   <% end %>

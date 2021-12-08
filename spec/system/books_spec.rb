@@ -19,4 +19,13 @@ describe 'Managing books' do
     expect(page).to have_content('R$ 13,00')
     expect(page).to have_content('1,40%')
   end
+  it '#show' do
+    book1 = create(:book, price: 10.0, discount: 1.2)
+
+    visit root_path
+    click_on 'Livros'
+    click_on book1.name
+
+    expect(page).to have_link('Comprar')
+  end
 end
