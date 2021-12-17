@@ -9,8 +9,9 @@ services:
     volumes:
       - .:/opt/app
     networks:
-      - api_network
-      - default
+      default:
+      api_network:
+        ipv4_address: 172.21.0.5
     environment: 
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres

@@ -1,4 +1,6 @@
 class Clients::BooksController < ApplicationController
+  before_action :authenticate_client!
+
   def index
     @client = current_client
     @books = @client.books

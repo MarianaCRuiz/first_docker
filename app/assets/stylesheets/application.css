@@ -20,3 +20,13 @@ ul#loginbar li {
   display:inline;
   padding: 5px;
 }
+div#alert{
+  border-style: solid;
+  border-color: coral;
+  text-align: center;
+}
+div#notice {
+  border-style: solid;
+  border-color: green;
+  text-align: center;
+}

@@ -13,10 +13,14 @@
   <body>
     <div>
       <% if notice %>
-        <p><%= notice %></p>
+        <div id="notice">
+          <h3><%= notice %></h3>
+        </div>
       <% end %>
       <% if alert %>
-        <p><%= alert %></p>
+        <div id="alert">
+          <h3><%= alert %></h3>
+        </div>
       <% end %>
       <ul id="loginbar">
         <li>
