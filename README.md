@@ -31,7 +31,7 @@ This application is to didactic purpose only. The goal is to run two application
       - docker-compose build
     - Enter 'exit' to close the container terminal
   - To execute the application:
-    - First: run docker-compose up, in the computer terminal, inside the this project folder
+    - First: run docker-compose up, in the computer terminal, inside this project folder
     - Second: run docker-compose up, in the computer terminal, inside the other application folder. This application is in another repository, called "first_api_docker" (https://github.com/MarianaCRuiz/first_api_docker)
     - Third: go to your browser, access http://localhost:3000
 
