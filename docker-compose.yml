@@ -2,16 +2,18 @@ version: '3'
 services:
   rails:
     build: .
-    command: rails s -b 0.0.0.0
-    container_name: first_app_container
+    command: bash -c "source script/common.sh; fix_linux_internal_host; rails s -b 0.0.0.0"
+    container_name: first_app_container_1
     ports:
       - 3000:3000
     volumes:
       - .:/opt/app
     networks:
-      default:
-      api_network:
-        ipv4_address: 172.21.0.5
+      - default
+      - api_network
+      - new_api_network
+    extra_hosts:
+      - host.docker.internal:host-gateway
     environment: 
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
@@ -30,9 +32,13 @@ services:
 volumes:
   first_app_data:
 networks:
-  api_network:
-    name: custom_api
-    driver: bridge
   default:
     name: first_app_default
     driver: bridge
+  api_network:
+    name: custom_api
+    driver: bridge
+    internal: true
+  new_api_network:
+    external:
+      name: 'external-net'

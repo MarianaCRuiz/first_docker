@@ -12,6 +12,8 @@ RUN apt-get update -qq
 RUN apt-get install -y --no-install-recommends nodejs postgresql-client \
       locales yarn
 
+RUN apt-get install -y net-tools
+
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 RUN locale-gen
 RUN export LC_ALL="en_US.utf8"
