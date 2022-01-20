@@ -12,6 +12,7 @@ class Purchase
 
   def self.setting_purchase_requisition(params)
     @book = Book.find(params[:book_id])
-    @purchase_data = { book_id: @book.id, price: @book.price, discount: @book.discount, client_id: params[:client_id] }
+    @purchase_data = { book_id: @book.id, price: @book.price,
+                       discount: @book.discount, client_id: params[:client_id].to_i }
   end
 end

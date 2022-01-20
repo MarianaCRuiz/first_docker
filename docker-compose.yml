@@ -10,7 +10,6 @@ services:
       - .:/opt/app
     networks:
       - default
-      - api_network
       - new_api_network
     extra_hosts:
       - host.docker.internal:host-gateway
@@ -35,10 +34,6 @@ networks:
   default:
     name: first_app_default
     driver: bridge
-  api_network:
-    name: custom_api
-    driver: bridge
-    internal: true
   new_api_network:
     external:
       name: 'external-net'

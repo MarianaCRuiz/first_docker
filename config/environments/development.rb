@@ -75,15 +75,4 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
-  config.hosts = [
-    IPAddr.new("0.0.0.0/0"), # All IPv4 addresses.
-    IPAddr.new("::/0"),      # All IPv6 addresses.
-    "localhost",             # The localhost reserved domain.
-    "api_rails_container_1",   # Allow this to be addressed when running in containers via docker-compose.yml.
-    'api_rails',
-    'first_app_container_1',
-    "container_1",
-    'host.docker.internal'
-  ]
 end
