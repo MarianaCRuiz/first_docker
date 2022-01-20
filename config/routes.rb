@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :books, only: %i[index show]
   resources :purchases, only: %i[create]
   namespace :clients do
-    resources :books, only: %i[index]
+    resources :books, only: %i[index] do
+      delete 'destroy_all', on: :collection
+    end
   end
 end

@@ -1,5 +1,8 @@
 <h1>Meus Livros</h1>
 <div>
+  <ul>
+    <li><%= link_to 'Apagar Lista', destroy_all_clients_books_path, method: :delete , data: { confirm: 'Are you sure?' }%></li>
+  </ul>
   <% @books.each do |book| %>
   <div>
     <ul>
