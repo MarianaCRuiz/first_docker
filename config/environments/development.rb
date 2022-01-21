@@ -78,12 +78,4 @@ Rails.application.configure do
 
   config.hosts << ENV['DOMAIN_HOST_NAME']
   config.hosts << ENV['DOMAIN_HOST_SERVICE']
-
-
-
-  # config.hosts << ENV['DOMAIN_HOST']
-  # config.hosts << ENV['DOMAIN_HOST_CONTAINER']
-
-  # config.hosts << ENV['DOMAIN_HOST_CONTAINER_API']
-  # config.hosts << ENV['DOMAIN_HOST_SERVICE']
 end

@@ -2,8 +2,8 @@ version: '3'
 services:
   web:
     build: .
-    command: bash -c "rails s -b 0.0.0.0" # source script/common.sh; fix_linux_internal_host; 
-    container_name: stream
+    command: bash -c "rails s -b 0.0.0.0"
+    container_name: bookstore
     volumes:
       - .:/opt/app
     ports:
@@ -11,14 +11,13 @@ services:
     tty: true
     stdin_open: true
     environment:
-      DOMAIN_HOST_NAME: stream
+      DOMAIN_HOST_NAME: bookstore
       DOMAIN_HOST_SERVICE: web
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_HOST: db
-      # DOCKER_COMPOSE_SESSION: true
     networks:
-      - api_charge_first_api_network # pagamentos-alpha_api_network
+      - api_charge_first_api_network
       - default
     depends_on:
       - db
@@ -39,4 +38,4 @@ networks:
   default:
     name: first_app_default
     driver: bridge
-     #pagamentos-alpha_api_network:
+    # pagamentos-alpha_api_network:
