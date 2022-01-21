@@ -1,29 +1,32 @@
 version: '3'
 services:
-  rails:
+  web:
     build: .
-    command: bash -c "source script/common.sh; fix_linux_internal_host; rails s -b 0.0.0.0"
-    container_name: first_app_container_1
-    ports:
-      - 3000:3000
+    command: bash -c "rails s -b 0.0.0.0" # source script/common.sh; fix_linux_internal_host; 
+    container_name: stream
     volumes:
       - .:/opt/app
+    ports:
+      - 3000:3000
+    tty: true
+    stdin_open: true
+    environment:
+      DOMAIN_HOST_NAME: stream
+      DOMAIN_HOST_SERVICE: web
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST: db
+      # DOCKER_COMPOSE_SESSION: true
     networks:
+      - api_charge_first_api_network # pagamentos-alpha_api_network
       - default
-      - new_api_network
-    extra_hosts:
-      - host.docker.internal:host-gateway
-    environment: 
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_HOST=db
     depends_on:
       - db
   db:
     image: postgres:14-alpine
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     volumes:
       - first_app_data:/var/lib/postgresql/data
     networks:
@@ -31,9 +34,9 @@ services:
 volumes:
   first_app_data:
 networks:
+  api_charge_first_api_network:
+    external: true
   default:
     name: first_app_default
     driver: bridge
-  new_api_network:
-    external:
-      name: 'external-net'
+     #pagamentos-alpha_api_network:
